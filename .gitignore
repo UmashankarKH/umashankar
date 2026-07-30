@@ -1,0 +1,23 @@
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+demo-env/
+venv/
+.venv/
+env/
+
+# Cloned dependency (installed manually per README, not part of this repo)
+tabfm/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "umashankar"
+version = "0.1.0"
+description = "A zero-shot tabular ML toolkit with a built-in UI/UX dashboard, powered by Google's TabFM."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [
+    { name = "Umashankar K H", email = "umashankerkh@gmail.com" }
+]
+keywords = ["tabular", "machine-learning", "tabfm", "dashboard", "streamlit", "zero-shot"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "pandas>=1.5",
+    "numpy>=1.23",
+    "streamlit>=1.32",
+    "plotly>=5.18",
+    "scikit-learn>=1.2",
+]
+
+# NOTE: TabFM (https://github.com/google-research/tabfm) is not published on
+# PyPI, and PyPI does not allow VCS/URL dependencies in package metadata, so
+# it cannot be listed here. Users must install it manually (see README)
+# before using umashankar.
+
+[project.urls]
+Homepage = "https://github.com/UmashankarKH/umashankar"
+Repository = "https://github.com/UmashankarKH/umashankar"
+
+[project.scripts]
+umashankar = "umashankar.dashboard:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/umashankar"]
